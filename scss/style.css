@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -30,8 +29,7 @@ body {
   background-image: url("../img/bitcoin-ge147f5685_640.jpg");
   background-position: center;
   background-size: cover;
-  -webkit-filter: sepia();
-          filter: sepia();
+  filter: sepia();
   z-index: 0;
 }
 .header__shadow {
@@ -43,12 +41,9 @@ body {
 }
 .header__text {
   display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-content: center;
+  justify-content: center;
   grid-column: 1/2;
   grid-row: 2/3;
-  background-color: rgba(41, 33, 33, 0.966);
+  background-color: #3F3F3E;
 }/*# sourceMappingURL=style.css.map */
