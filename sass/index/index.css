@@ -35,4 +35,32 @@
   src: url("../../fonts/trirong-regular-webfont.woff2") format("woff2"), url("../../fonts/trirong-regular-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+}
+@media (min-width: 576px) {
+  .nav-desktop {
+    display: none;
+  }
+  .header__head {
+    font-size: 6rem;
+  }
+  .header__body {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .nav__link {
+    padding: 0.5em;
+    margin-top: 3.5em;
+    text-decoration: none;
+    color: #af9335;
+    font-family: "old_standard_ttregular", sans-serif;
+  }
+  .nav-desktop {
+    display: block;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 3rem;
+    z-index: 10;
+  }
 }/*# sourceMappingURL=index.css.map */

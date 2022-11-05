@@ -1,0 +1,24 @@
+@use '../utilities/colors' as *;
+@use '../utilities/fonts' as *;
+
+@media (min-width: 992px) {
+	.nav{
+        &__link{
+            padding: .5em;
+            margin-top: 3.5em;
+            text-decoration: none;
+            color: $primary;
+            font-family: $main-font, sans-serif;
+        }
+
+    &-desktop{
+        display: block;
+        position: fixed;
+        top: 5%;
+        left: 5%;
+        font-size: 3rem;
+        z-index: 10;
+
+    }
+    }
+}

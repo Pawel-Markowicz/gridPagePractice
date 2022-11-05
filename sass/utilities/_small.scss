@@ -1,8 +1,15 @@
 @media (min-width: 576px){
+    .nav-desktop{
+        display: none;
+
+    }
+
     .header{
         &__head{
-            
-
+            font-size: 6rem;
+        }
+        &__body{
+            font-size: 3rem;
         }
     }
 }
