@@ -1,15 +1,38 @@
-@media (min-width: 576px){
+
+
+@media (min-width: 0px) and (max-width: 992px){
     .nav-desktop{
         display: none;
 
     }
 
     .header{
+        display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+       &__img{
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        background-image: url('../../img/bitcoin-ge147f5685_640.jpg');
+
+       }
+       &__text{
+        grid-column: 1/2;
+        grid-row: 2/3;
+       }
+
         &__head{
             font-size: 6rem;
         }
         &__body{
             font-size: 3rem;
         }
+
+        &__arrow{
+            display: none;
+        }
     }
+
+    
 }
