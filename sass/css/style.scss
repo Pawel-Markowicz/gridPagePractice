@@ -1,5 +1,11 @@
 @use '../index/index.scss' as *;
 
+.wrapper{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 *{
     margin: 0;
@@ -10,12 +16,20 @@
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
+    
+
 }
 
 body{
     font-size: 1.6rem;
+    font-family: $primary-font;
+    
     
 }
+
+
+
+
 
 // ANIMATIONS
 
@@ -43,11 +57,11 @@ body{
 
 @keyframes rotate-left{
     from{
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 
     to{
-        transform: rotate(0);
+        transform: rotate(-360deg);
     }
 }
 
@@ -59,6 +73,7 @@ body{
 .header{
     background-color: $dark;
     height: 100vh;
+    width: 100%;
     z-index: 0;
 
    
@@ -69,8 +84,7 @@ body{
         background-position: center;
         background-size: cover;
         filter: sepia();
-        z-index: 5;
-     
+        z-index: 15;
     }
 
     &__shadow{
@@ -78,7 +92,6 @@ body{
         height: 100%;
         width: 100%;
         background-color: rgba(2, 2, 2, 0.3);
-        
     }
 
     &__text{
@@ -87,7 +100,6 @@ body{
         align-content: center;
         justify-content: center;
         color: $primary-color;
-
     }
 
     &__head{
@@ -103,36 +115,66 @@ body{
         color: $light;
     }
 
-    &__anime-icon-one{
-        position: absolute;
-        top: 20%;
-        left: 28%;
-        font-size: 35rem;
-        animation: rotate-right 100s linear infinite;
-        z-index: 1;
-    
-        
-    
-    }
-    &__anime-icon-two{
-        position: absolute;
-        bottom: 10%;
-        left: 5%;
-        font-size: 5rem;
-        animation: rotate-left 100s linear infinite;
-    
-    }
-
-    
+   
+    &__squares{
+        display: grid;
+        grid-template-columns: 248px minmax(0, 2fr);
+    }    
 }
 
 .nav{
     font-family: $primary-font;
 }
 
-.nav-mobile{
-    display: none;
+.cards{
+    background-color: $darker;
+    color: $light;
+    &__box{
+        padding: 1em;
+    }
 
+    &__card{
+        position: relative;
+        padding: 3em 2em;
+        margin: 1.5em 1em;
+        background-color: $dark;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid transparent;
+        transition: background-color .3s, border .3s;
+
+        h3{
+            font-size: 2.5rem;
+            padding-bottom: 0.2em;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid $primary-color;
+            opacity: 0;
+        }
+
+        &:hover::before{
+            animation: pulse 2s;
+        }
+    }
+
+    &__card:hover{
+        background-color: $darker;
+        border: 1px solid $primary-color;
+    }
+
+    .fa-arrow-trend-up{
+        font-size: 4rem;
+        padding-bottom: 0.3em;
+        color: $primary-color;
+    }
 }
 
 

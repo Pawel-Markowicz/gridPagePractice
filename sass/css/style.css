@@ -38,13 +38,11 @@
   font-style: normal;
 }
 @media (min-width: 0px) and (max-width: 992px) {
-  .nav-desktop {
-    display: none;
-  }
   .header {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    overflow-x: hidden;
   }
   .header__img {
     display: grid;
@@ -64,6 +62,68 @@
   }
   .header__arrow {
     display: none;
+  }
+  .header__anime-icon-one {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 15rem;
+    -webkit-animation: rotate-right 100s linear infinite;
+            animation: rotate-right 100s linear infinite;
+    z-index: 1;
+  }
+  .header__anime-icon-two {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    font-size: 5rem;
+    -webkit-animation: rotate-left 100s linear infinite;
+            animation: rotate-left 100s linear infinite;
+  }
+  .header .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5em;
+    font-size: 4rem;
+    color: rgb(243, 241, 241);
+    cursor: pointer;
+    z-index: 25;
+  }
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(243, 241, 241);
+    font-size: 5rem;
+    transition: transform 0.3s;
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+  .nav__link {
+    text-decoration: none;
+    color: #2b2b29;
+  }
+  .active {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .section-padding {
+    padding: 4em 2em;
+  }
+  .cards__box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 992px) {
@@ -90,10 +150,10 @@
     position: absolute;
     bottom: 5%;
     left: 50%;
-    border: 1px solid rgba(238, 238, 238, 0.918);
+    border: 1px solid rgb(243, 241, 241);
     border-radius: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 16;
   }
   .header__arrow::before {
     content: "";
@@ -103,34 +163,74 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid rgba(238, 238, 238, 0.918);
+    border: 1px solid rgb(243, 241, 241);
     -webkit-animation: pulse 3s linear infinite;
             animation: pulse 3s linear infinite;
     opacity: 0;
+  }
+  .header__anime-icon-one {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    font-size: 35rem;
+    -webkit-animation: rotate-right 100s linear infinite;
+            animation: rotate-right 100s linear infinite;
+    z-index: -1;
+  }
+  .header__anime-icon-two {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    font-size: 5rem;
+    -webkit-animation: rotate-left 100s linear infinite;
+            animation: rotate-left 100s linear infinite;
   }
   .nav {
     display: grid;
     grid-column: 1/2;
     grid-row: 1/2;
+    padding: 0.8em;
     width: 50%;
   }
   .nav__link {
-    padding: 0.5em;
-    margin-top: 3.5em;
+    position: relative;
     text-decoration: none;
-    color: rgba(238, 238, 238, 0.918);
-    font-family: "amikoregular", sans-serif;
+    color: rgb(243, 241, 241);
+  }
+  .nav__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #af9335;
+    opacity: 0;
+  }
+  .nav__link:hover::before {
+    -webkit-animation: 1s pulse linear;
+            animation: 1s pulse linear;
   }
   .nav-desktop {
-    display: block;
-    position: fixed;
-    top: 5%;
-    left: 0%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
     font-size: 3rem;
-    background-color: #41413f;
-    border-bottom: 0.01px solid #af9335;
+    background-color: #2b2b29;
+    border-bottom: 0.1px solid rgb(243, 241, 241);
+  }
+  .nav-mobile {
+    display: none;
   }
 }
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -144,6 +244,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "amikoregular";
 }
 
 @-webkit-keyframes pulse {
@@ -185,18 +286,18 @@ body {
 }
 @-webkit-keyframes rotate-left {
   from {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(0);
+    transform: rotate(-360deg);
   }
 }
 @keyframes rotate-left {
   from {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(0);
+    transform: rotate(-360deg);
   }
 }
 .anime-icon {
@@ -205,8 +306,9 @@ body {
 }
 
 .header {
-  background-color: #41413f;
+  background-color: #2b2b29;
   height: 100vh;
+  width: 100%;
   z-index: 0;
 }
 .header__img {
@@ -216,7 +318,7 @@ body {
   background-position: center;
   background-size: cover;
   filter: sepia();
-  z-index: 5;
+  z-index: 15;
 }
 .header__shadow {
   position: absolute;
@@ -240,30 +342,59 @@ body {
   padding: 0.4em 0.9em;
   font-size: 2rem;
   font-family: "amikoregular";
-  color: rgba(238, 238, 238, 0.918);
+  color: rgb(243, 241, 241);
 }
-.header__anime-icon-one {
-  position: absolute;
-  top: 20%;
-  left: 28%;
-  font-size: 35rem;
-  -webkit-animation: rotate-right 100s linear infinite;
-          animation: rotate-right 100s linear infinite;
-  z-index: 1;
-}
-.header__anime-icon-two {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  font-size: 5rem;
-  -webkit-animation: rotate-left 100s linear infinite;
-          animation: rotate-left 100s linear infinite;
+.header__squares {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 2fr);
 }
 
 .nav {
   font-family: "amikoregular";
 }
 
-.nav-mobile {
-  display: none;
+.cards {
+  background-color: #191918;
+  color: rgb(243, 241, 241);
+}
+.cards__box {
+  padding: 1em;
+}
+.cards__card {
+  position: relative;
+  padding: 3em 2em;
+  margin: 1.5em 1em;
+  background-color: #2b2b29;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, border 0.3s;
+}
+.cards__card h3 {
+  font-size: 2.5rem;
+  padding-bottom: 0.2em;
+}
+.cards__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #af9335;
+  opacity: 0;
+}
+.cards__card:hover::before {
+  -webkit-animation: pulse 2s;
+          animation: pulse 2s;
+}
+.cards__card:hover {
+  background-color: #191918;
+  border: 1px solid #af9335;
+}
+.cards .fa-arrow-trend-up {
+  font-size: 4rem;
+  padding-bottom: 0.3em;
+  color: #af9335;
 }/*# sourceMappingURL=style.css.map */

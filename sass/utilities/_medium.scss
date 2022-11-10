@@ -1,0 +1,13 @@
+@media (min-width: 768px) and (max-width: 992px){
+    .section-padding{
+        padding: 4em 2em;
+    }
+    
+    .cards{
+        
+        &__box{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
