@@ -6,6 +6,12 @@
     margin: 0 auto;
 }
 
+.anime-icon{
+    color: #daa7001c;
+    z-index: 10;
+}
+
+
 
 *{
     margin: 0;
@@ -23,8 +29,7 @@ html{
 body{
     font-size: 1.6rem;
     font-family: $primary-font;
-    
-    
+
 }
 
 
@@ -65,10 +70,6 @@ body{
     }
 }
 
-.anime-icon{
-    color: #af92351c;
-    z-index: 10;
-}
 
 .header{
     background-color: $dark;

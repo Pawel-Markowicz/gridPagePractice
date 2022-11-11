@@ -139,6 +139,7 @@
     display: grid;
     grid-column: 1/2;
     grid-row: 2/4;
+    padding: 2em;
   }
   .header__img {
     display: grid;
@@ -147,8 +148,11 @@
     background-image: url("../../img/bitcoin-3014614_1920.jpg");
   }
   .header__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    bottom: 5%;
+    bottom: 4%;
     left: 50%;
     border: 1px solid rgb(243, 241, 241);
     border-radius: 50%;
@@ -223,5 +227,47 @@
   }
   .nav-mobile {
     display: none;
+  }
+  .invest {
+    position: relative;
+    background-color: #2b2b29;
+    color: rgb(243, 241, 241);
+  }
+  .invest h2, .invest h3 {
+    color: #af9335;
+  }
+  .invest h2 {
+    padding-left: 1em;
+    padding-top: 1em;
+  }
+  .invest__one {
+    font-size: 10rem;
+    z-index: 100;
+  }
+  .invest__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .invest__box {
+    padding-top: 2em;
+  }
+  .invest__box--one {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .invest__box--two {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .invest__box--three {
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+  .invest__one {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-size: 35rem;
   }
 }/*# sourceMappingURL=index.css.map */
