@@ -5,7 +5,7 @@
   font-family: "amikobold";
   src: url("../../fonts/sans-serif/amiko-bold-webfont.woff2") format("woff2"), url("../../fonts/sans-serif/amiko-bold-webfont.woff") format("woff");
   font-weight: 800;
-  font-style: normal;
+  font-style: bold;
 }
 @font-face {
   font-family: "amikoregular";
@@ -36,6 +36,32 @@
   src: url("../../fonts/trirong-regular-webfont.woff2") format("woff2"), url("../../fonts/trirong-regular-webfont.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+}
+@media (min-width: 0) and (max-width: 768px) {
+  .future {
+    color: rgb(243, 241, 241);
+  }
+  .future__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .future__box {
+    padding: 2em;
+    margin: 1em;
+    text-align: center;
+    background-color: #2b2b29;
+    border-radius: 8px;
+  }
+  .future__box i {
+    font-size: 4rem;
+  }
+  .future__box h3, .future__box i {
+    padding: 0.4em;
+  }
+  .future__box p {
+    padding: 0.7em;
+  }
 }
 @media (min-width: 0px) and (max-width: 992px) {
   .header {
@@ -117,13 +143,74 @@
     transform: translateX(0);
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .section-padding {
-    padding: 4em 2em;
+@media (min-width: 768px) {
+  .invest {
+    display: grid;
   }
+  .invest h2 {
+    padding-left: 1em;
+    padding-top: 1em;
+  }
+  .invest__one {
+    font-size: 10rem;
+    z-index: 100;
+  }
+  .invest__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .invest__box {
+    padding-top: 2em;
+  }
+  .invest__box--one {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  .invest__box--two {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .invest__box--three {
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+  .invest__one {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-size: 35rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
   .cards__box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .future {
+    color: rgb(243, 241, 241);
+  }
+  .future__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .future__box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    padding: 1em;
+    margin: 1.4em;
+    background-color: #2b2b29;
+    border-radius: 8px;
+  }
+  .future__box i {
+    font-size: 4rem;
+  }
+  .future__box h3, .future__box i {
+    padding: 0.5em;
   }
 }
 @media (min-width: 992px) {
@@ -228,48 +315,6 @@
   .nav-mobile {
     display: none;
   }
-  .invest {
-    position: relative;
-    background-color: #2b2b29;
-    color: rgb(243, 241, 241);
-  }
-  .invest h2, .invest h3 {
-    color: #af9335;
-  }
-  .invest h2 {
-    padding-left: 1em;
-    padding-top: 1em;
-  }
-  .invest__one {
-    font-size: 10rem;
-    z-index: 100;
-  }
-  .invest__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-  .invest__box {
-    padding-top: 2em;
-  }
-  .invest__box--one {
-    grid-row: 1/2;
-    grid-column: 2/3;
-  }
-  .invest__box--two {
-    grid-row: 2/3;
-    grid-column: 2/3;
-  }
-  .invest__box--three {
-    grid-row: 3/4;
-    grid-column: 2/3;
-  }
-  .invest__one {
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    font-size: 35rem;
-  }
 }
 .wrapper {
   width: 100%;
@@ -279,7 +324,28 @@
 
 .anime-icon {
   color: rgba(218, 167, 0, 0.1098039216);
-  z-index: 10;
+}
+
+.section-padding {
+  padding: 6em 3em;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background-color: #af9335;
+}
+
+.heading {
+  position: relative;
+}
+.heading h2 {
+  font-family: "amikoregular";
+  font-weight: normal;
+}
+.heading span {
+  font-family: "amikobold";
+  font-weight: bold;
 }
 
 * {
@@ -296,6 +362,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "amikoregular";
+  font-weight: 100;
 }
 
 @-webkit-keyframes pulse {
@@ -390,10 +457,6 @@ body {
   font-family: "amikoregular";
   color: rgb(243, 241, 241);
 }
-.header__squares {
-  display: grid;
-  grid-template-columns: 248px minmax(0, 2fr);
-}
 
 .nav {
   font-family: "amikoregular";
@@ -443,4 +506,110 @@ body {
   font-size: 4rem;
   padding-bottom: 0.3em;
   color: #af9335;
+}
+
+.invest {
+  position: relative;
+  background-color: #2b2b29;
+  color: rgb(243, 241, 241);
+  z-index: 0;
+}
+.invest__img {
+  width: 100%;
+  max-width: 100%;
+}
+.invest .line {
+  margin-left: 1.6em;
+}
+.invest h2, .invest h3 {
+  color: #af9335;
+}
+.invest__img {
+  z-index: 10;
+}
+.invest__one, .invest__two {
+  position: absolute;
+  z-index: -1;
+}
+.invest__one {
+  top: 40%;
+  -webkit-animation: rotate-left 60s linear infinite;
+          animation: rotate-left 60s linear infinite;
+}
+.invest__two {
+  top: 10%;
+  left: 20%;
+  font-size: 7rem;
+  -webkit-animation: rotate-right 60s linear infinite;
+          animation: rotate-right 60s linear infinite;
+}
+
+.future {
+  background-color: #191918;
+}
+.future h3, .future h2, .future i {
+  color: #af9335;
+}
+.future .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.future .heading__head {
+  position: relative;
+}
+.future .heading__head .line {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+.future__box {
+  background-color: #2b2b29;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border 0.3s, background-color 0.3s;
+}
+.future__box:hover {
+  background-color: #191918;
+  border: 1px solid #af9335;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.6rem;
+  background-color: #FFC91E;
+  color: rgb(243, 241, 241);
+}
+.contact__head {
+  padding: 1em;
+  margin: 0.9em;
+  font-size: 1.9rem;
+}
+.contact input {
+  width: 80%;
+  margin: 2em;
+  border: none;
+}
+.contact__subscribe {
+  width: 20%;
+  padding: 1em;
+  margin: 1em;
+  font-size: 2rem;
+  background-color: #FFC91E;
+  border: 1px solid #2b2b29;
+  transition: background-color 0.3s, color 0.3s;
+}
+.contact__subscribe:hover {
+  background-color: #2b2b29;
+  color: #FFC91E;
+}
+
+footer {
+  padding: 0.2em;
+  background-color: #2b2b29;
+  color: #af9335;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

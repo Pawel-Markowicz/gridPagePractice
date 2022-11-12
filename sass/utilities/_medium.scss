@@ -1,7 +1,59 @@
+@use './colors' as *;
+
+@media (min-width: 768px) {
+    .invest{
+        display: grid;
+
+        
+     
+        h2{
+            padding-left: 1em;
+            padding-top: 1em;
+        }
+        &__one{
+            font-size: 10rem;
+            z-index: 100;
+        }
+        &__container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+    
+        &__box{
+            padding-top: 2em;
+        }
+    
+        &__box--one{
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+    
+        &__box--two{
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
+    
+        &__box--three{
+            grid-row: 3/4;
+            grid-column: 2/3;
+        }
+    
+        &__one{
+            position: absolute;
+            top: 30%;
+            left: 20%;
+            font-size: 35rem;
+            
+        }
+    
+    
+     }
+}
+
+
 @media (min-width: 768px) and (max-width: 992px){
-    .section-padding{
-        padding: 4em 2em;
-    }
+   
     
     .cards{
         
@@ -9,5 +61,37 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
         }
+    }
+
+   
+}
+
+@media (min-width: 768px){
+    .future{
+        color: $light;
+        &__container{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+       
+        &__box{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: center;
+            padding: 1em;
+            margin: 1.4em;
+            background-color: $dark;
+            border-radius: 8px;
+
+            i{
+                font-size: 4rem;
+            }
+
+            h3, i{
+                padding: 0.5em;
+            }
+        }
+    
     }
 }

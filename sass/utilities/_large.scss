@@ -1,6 +1,8 @@
 @use '../utilities/colors' as *;
 @use '../utilities/fonts' as *;
 
+
+
 @media (min-width: 992px) {
     .anime-icon{
         z-index: -10;
@@ -123,56 +125,6 @@
     }
  }
 
- .invest{
-    position: relative;
-    background-color: $dark;
-    color: $light;
-    h2, h3{
-        color: $primary-color;
-    }
-
-    h2{
-        padding-left: 1em;
-        padding-top: 1em;
-    }
-    &__one{
-        font-size: 10rem;
-        z-index: 100;
-    }
-    &__container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-
-    &__box{
-        padding-top: 2em;
-    }
-
-    &__box--one{
-        grid-row: 1/2;
-        grid-column: 2/3;
-    }
-
-    &__box--two{
-        grid-row: 2/3;
-        grid-column: 2/3;
-    }
-
-    &__box--three{
-        grid-row: 3/4;
-        grid-column: 2/3;
-    }
-
-    &__one{
-        position: absolute;
-        top: 30%;
-        left: 20%;
-        font-size: 35rem;
-        
-    }
-
-
- }
+ 
     
 }

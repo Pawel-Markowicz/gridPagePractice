@@ -1,5 +1,37 @@
 @use '../utilities/colors' as *;
 
+@media (min-width: 0) and (max-width: 768px){
+    .future{
+        color: $light;
+        &__container{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+       
+        &__box{
+            padding: 2em;
+            margin: 1em;
+            text-align: center;
+            background-color: $dark;
+            border-radius: 8px;
+
+            i{
+                font-size: 4rem;
+            }
+            h3, i{
+                padding: 0.4em;
+            }
+
+            p{
+                padding: 0.7em;
+            }
+
+
+        }
+    
+    }
+}
 
 
 @media (min-width: 0px) and (max-width: 992px){
@@ -94,7 +126,6 @@
        
     }
 
- 
 
     .active{
         transform: translateX(0);
